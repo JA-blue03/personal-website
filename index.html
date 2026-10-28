@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leong Jing An | IT Systems & Data Automation Portfolio</title>
+<meta name="description" content="Portfolio of Leong Jing An: Power Apps, Power Automate, Google Apps Script and data pipeline projects.">
+<style>
+:root{
+  --ink:#14213d; --muted:#51597a; --paper:#f7f8fc; --card:#ffffff;
+  --blue:#3f55a8; --soft:#e3e8f6; --line:#d5daea;
+}
+@media (prefers-color-scheme:dark){
+  :root{--ink:#eef1fb; --muted:#a9b1d1; --paper:#10152b; --card:#181f3d; --blue:#8fa3f0; --soft:#232c55; --line:#2e3868;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:17px/1.65 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif}
+a{color:var(--blue)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+nav{padding:18px 0;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+nav b{margin-right:auto;font-size:1rem}
+nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+nav a:hover{color:var(--blue)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;margin:0}
+h1{font-size:clamp(2.4rem,7vw,3.6rem);letter-spacing:-.01em}
+h2{font-size:1.8rem;margin-bottom:18px}
+h3{font-size:1.35rem}
+section{padding:54px 0;border-top:1px solid var(--line)}
+.hero{padding:64px 0 54px;border-top:0}
+.hero p.lead{font-size:1.2rem;max-width:620px;color:var(--muted);margin:16px 0 26px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;background:var(--blue);color:var(--paper);
+  text-decoration:none;font-weight:600;margin:0 10px 10px 0}
+.btn.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);padding:9px 18px}
+
+/* The pipeline strip: the one memorable element */
+.flow{display:flex;align-items:center;gap:0;margin-top:34px;flex-wrap:wrap}
+.node{background:var(--card);border:2px solid var(--blue);border-radius:8px;padding:10px 16px;font-weight:600;font-size:.95rem}
+.link{width:46px;height:2px;background:var(--blue);position:relative}
+.link::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:8px solid var(--blue);border-right:0}
+.flow-cap{width:100%;margin:10px 0 0;color:var(--muted);font-size:.9rem}
+
+.project{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;margin-bottom:26px}
+.project .tools{color:var(--muted);font-size:.92rem;margin:6px 0 14px}
+.project h4{margin:18px 0 4px;font-size:1rem}
+.project p,.project ul{margin:0 0 8px}
+.project ul{padding-left:20px}
+figure{margin:20px 0 0;position:relative;border:2px dashed var(--line);border-radius:8px;min-height:140px;
+  display:flex;align-items:center;justify-content:center;background:var(--soft);overflow:hidden}
+figure span{padding:14px;color:var(--muted);font-size:.9rem;text-align:center}
+figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card)}
+figcaption{position:absolute;left:0;right:0;bottom:0}
+.skills,.certs{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.skills li{background:var(--blue);color:var(--paper);padding:5px 14px;border-radius:5px;font-size:.92rem;font-weight:600}
+.certs{display:block}
+.certs li{padding:10px 0;border-bottom:1px solid var(--line)}
+.certs small{color:var(--muted)}
+blockquote{margin:0;padding:6px 0 6px 20px;border-left:4px solid var(--blue);font-family:Georgia,serif;font-size:1.15rem}
+footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media (max-width:560px){body{font-size:16px}.project{padding:18px}.link{width:26px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Jing An</b>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <h1>Leong Jing An</h1>
+  <p class="lead">Higher Nitec student in IT Systems &amp; Networks. I build workflow automation and data pipelines, and I’m aiming for a career in data engineering.</p>
+  <!-- EDIT: change the file name below if you rename your resume PDF. -->
+  <a class="btn" href="Leong_Jing_An_Resume.pdf">Download resume (PDF)</a>
+  <a class="btn ghost" href="#projects">See my projects</a>
+
+  <div class="flow" aria-label="Example pipeline: Gmail alert to Apps Script to Google Sheets">
+    <div class="node">Gmail alert</div><div class="link"></div>
+    <div class="node">Apps Script</div><div class="link"></div>
+    <div class="node">Google Sheets</div>
+    <p class="flow-cap">One of my internship projects: email alerts turned into structured data automatically.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <h2>About me</h2>
+  <p>I’m studying Higher Nitec in IT Systems &amp; Networks at ITE College West (GPA 3.69/4.0). During my internship at Equinix Singapore I worked in a mission-critical data center and built internal tools that replaced manual work.</p>
+  <p>I also do freelance AI data work with RWS Group, checking AI model outputs in Chinese. I want to continue into the Work-Study Diploma in AI &amp; Data Intelligence (Data Engineering).</p>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <!-- ===== PROJECT 1 ===== -->
+  <article class="project">
+    <h3>Enterprise Fault Logging Audit Portal</h3>
+    <p class="tools">Equinix Singapore internship · Power Apps, Power Automate, SharePoint, Excel</p>
+    <p>A low-code portal for reporting and tracking faults in data center operations.</p>
+    <h4>What I built</h4>
+    <ul>
+      <li>Front-end in Power Apps, with backend workflow logic in Power Automate.</li>
+      <li>Multi-photo fault reporting stored in SharePoint document libraries and Excel.</li>
+      <li>Automated notification routing and real-time audit tracking.</li>
+    </ul>
+    <!-- EDIT: add real results here if you have them (time saved, number of users). Delete this line if not. -->
+
+    <!-- HOW TO ADD A PICTURE:
+         1. Put your image in the "images" folder in your repo, e.g. images/fault-portal-1.png
+         2. Make sure the file name below matches exactly (small/big letters count!)
+         3. Change the alt text to describe the picture.
+         Hide any real names, IDs or customer data in the picture first. -->
+    <figure>
+      <span>Picture goes here.<br>Upload it as images/fault-portal-1.png</span>
+      <img src="images/fault-portal-1.png" alt="Home screen of the fault logging portal" onerror="this.style.display='none'">
+    </figure>
+    <figure>
+      <span>Second picture (optional).<br>Upload it as images/fault-portal-2.png</span>
+      <img src="images/fault-portal-2.png" alt="Fault report form with photo upload" onerror="this.style.display='none'">
+    </figure>
+
+    <!-- HOW TO ADD A VIDEO LINK: upload the video to YouTube as "Unlisted", then remove the
+         comment marks around the line below and paste your link. -->
+    <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
+  </article>
+
+  <!-- ===== PROJECT 2 ===== -->
+  <article class="project">
+    <h3>Automated Transaction Data Extraction &amp; Logging Pipeline</h3>
+    <p class="tools">Equinix Singapore internship · Google Apps Script, Gmail, Google Sheets</p>
+    <p>An automation that removes manual data entry from incoming email alerts.</p>
+    <h4>What I built</h4>
+    <ul>
+      <li>Custom Google Apps Script that reads incoming alert emails in Gmail.</li>
+      <li>Logic that extracts the key transaction fields from each email.</li>
+      <li>Structured rows logged into Google Sheets in real time.</li>
+    </ul>
+    <figure>
+      <span>Picture goes here.<br>Upload it as images/pipeline-1.png</span>
+      <img src="images/pipeline-1.png" alt="Google Sheet filled automatically from email alerts (sample data)" onerror="this.style.display='none'">
+    </figure>
+    <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
+  </article>
+
+  <!-- Want a third project later? Copy one whole <article> ... </article> block and paste it here. -->
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Power Apps</li><li>Power Automate</li><li>Google Apps Script</li><li>SharePoint</li>
+    <li>AppSheet</li><li>Google Sheets</li><li>Excel</li><li>Python</li>
+    <li>Networking Essentials</li><li>DevOps</li><li>CI/CD</li>
+  </ul>
+</section>
+
+<!-- ============ RECOMMENDATION (optional) ============ -->
+<!-- HOW TO USE: ask your supervisor first. Remove the comment marks around this block,
+     then replace the quote, name and title.
+<section id="recommendation">
+  <h2>What my supervisor said</h2>
+  <blockquote>“PASTE ONE STRONG SENTENCE FROM THE LETTER.”</blockquote>
+  <p>Name, Job title, Equinix Singapore</p>
+</section>
+-->
+
+<!-- ============ CERTIFICATES ============ -->
+<section id="certificates">
+  <h2>Certificates</h2>
+  <ul class="certs">
+    <!-- HOW TO ADD A LINK: wrap the name in <a href="THE-LINK">...</a>, for example:
+         <li><a href="https://www.credly.com/your-badge-link">Cybersecurity Fundamentals</a> ... -->
+    <li>Network Technician Career Path <small>· Cisco · 10/2026</small></li>
+    <li>PagerDuty DevOps Professional Certificate <small>· PagerDuty · 11/2025</small></li>
+    <li>Excel Essential Training <small>· Microsoft 365 · 10/2025</small></li>
+    <li>Bring AI To Workshop <small>· Google · 07/2025</small></li>
+    <li>Cybersecurity Fundamentals <small>· IBM · 07/2025</small></li>
+  </ul>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>I’m open to Work-Study Diploma sponsors and data or IT opportunities.</p>
+  <p>
+    <a class="btn" href="mailto:leongjingan@gmail.com">Email me</a>
+    <!-- EDIT: your LinkedIn link is already filled in. -->
+    <a class="btn ghost" href="https://www.linkedin.com/in/jingan-leong-a02143327/">LinkedIn</a>
+    <!-- EDIT: replace yourusername, then remove the comment marks to show your GitHub button.
+    <a class="btn ghost" href="https://github.com/yourusername">GitHub</a> -->
+  </p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Leong Jing An. Project screenshots use sample data only.</div>
+</footer>
+
+</body>
+</html>
