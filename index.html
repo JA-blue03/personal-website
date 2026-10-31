@@ -53,6 +53,9 @@ figure{margin:20px 0 0;position:relative;border:2px dashed var(--line);border-ra
 figure span{padding:14px;color:var(--muted);font-size:.9rem;text-align:center}
 figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card)}
 figcaption{position:absolute;left:0;right:0;bottom:0}
+.result{background:var(--soft);border-left:4px solid var(--blue);border-radius:6px;padding:14px 18px;margin:18px 0 0}
+.result b{font-family:Georgia,serif;font-size:1.5rem;display:block;line-height:1.2}
+.result small{color:var(--muted);display:block;margin-top:4px}
 .skills,.certs{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
 .skills li{background:var(--blue);color:var(--paper);padding:5px 14px;border-radius:5px;font-size:.92rem;font-weight:600}
 .certs{display:block}
@@ -97,7 +100,7 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
 <!-- ============ ABOUT ============ -->
 <section id="about">
   <h2>About me</h2>
-  <p>I’m studying Higher Nitec in IT Systems &amp; Networks at ITE College West (GPA 3.69/4.0). During my internship at Equinix Singapore I worked in a mission-critical data center and built internal tools that replaced manual work.</p>
+  <p>I’m studying Higher Nitec in IT Systems &amp; Networks at ITE College West (GPA 3.69/4.0). During my internship at Equinix Singapore I worked in a mission-critical data center and built internal tools that replaced manual work, including an audit system estimated to save about 62 hours a year.</p>
   <p>I also do freelance AI data work with RWS Group, checking AI model outputs in Chinese. I want to continue into the Work-Study Diploma in AI &amp; Data Intelligence (Data Engineering).</p>
 </section>
 
@@ -108,21 +111,37 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
   <!-- ===== PROJECT 1 ===== -->
   <article class="project">
     <h3>Enterprise Fault Logging Audit Portal</h3>
-    <p class="tools">Equinix Singapore internship · Power Apps, Power Automate, SharePoint, Excel</p>
-    <p>A low-code portal for reporting and tracking faults in data center operations.</p>
+    <p class="tools">Equinix Singapore internship · Power Apps, Power Automate, SharePoint, Excel, Microsoft Teams</p>
+    <p>An internal audit portal that replaced a manual routine of typing errors, sending photos by chat, renaming files, copying links and updating personal tracking files.</p>
+
     <h4>What I built</h4>
     <ul>
-      <li>Front-end in Power Apps, with backend workflow logic in Power Automate.</li>
-      <li>Multi-photo fault reporting stored in SharePoint document libraries and Excel.</li>
-      <li>Automated notification routing and real-time audit tracking.</li>
+      <li>Three Power Apps modules: error registration, SME review console and error rectification.</li>
+      <li>Nine Power Automate flows for submission, deletion, status updates, reminders and rectification.</li>
+      <li>Multi-photo fault reporting stored in SharePoint, linked to Excel records by a unique Serial ID.</li>
+      <li>A status lifecycle (Pending, Sent for Correction, Rectified, Closed) with Microsoft Teams notifications.</li>
+      <li>Notification links that open the app with the record details already filled in.</li>
     </ul>
-    <!-- EDIT: add real results here if you have them (time saved, number of users). Delete this line if not. -->
+
+    <h4>Problems I solved</h4>
+    <ul>
+      <li><b>Speed:</b> searching the whole multi-tab Excel file took about 40 seconds per submission. I routed each record to its monthly table instead.</li>
+      <li><b>Data quality:</b> each Serial ID is checked against Excel before saving, and unknown IDs are rejected with a clear message.</li>
+      <li><b>Data consistency:</b> every record has a unique ID, and deleting a file or folder also removes its matching Excel rows.</li>
+      <li><b>Access control:</b> users can only delete their own submissions.</li>
+      <li><b>Handover:</b> I wrote full technical documentation of the system and its flows.</li>
+    </ul>
+
+    <div class="result">
+      <b>About 62 hours saved per year (estimate)</b>
+      <small>From about 74 hours to 11 hours of manual work, based on 10 errors per week (520 per year).</small>
+    </div>
 
     <!-- HOW TO ADD A PICTURE:
-         1. Put your image in the "images" folder in your repo, e.g. images/fault-portal-1.png
+         1. Put your image in the "images" folder, e.g. images/fault-portal-1.png
          2. Make sure the file name below matches exactly (small/big letters count!)
          3. Change the alt text to describe the picture.
-         Hide any real names, IDs or customer data in the picture first. -->
+         Hide any real names, IDs, site names or customer data first. -->
     <figure>
       <span>Picture goes here.<br>Upload it as images/fault-portal-1.png</span>
       <img src="images/fault-portal-1.png" alt="Home screen of the fault logging portal" onerror="this.style.display='none'">
@@ -131,9 +150,11 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
       <span>Second picture (optional).<br>Upload it as images/fault-portal-2.png</span>
       <img src="images/fault-portal-2.png" alt="Fault report form with photo upload" onerror="this.style.display='none'">
     </figure>
+    <figure>
+      <span>Workflow diagram (optional).<br>Upload it as images/fault-portal-workflow.png</span>
+      <img src="images/fault-portal-workflow.png" alt="Workflow: submission, processing, SME verification, notification" onerror="this.style.display='none'">
+    </figure>
 
-    <!-- HOW TO ADD A VIDEO LINK: upload the video to YouTube as "Unlisted", then remove the
-         comment marks around the line below and paste your link. -->
     <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
   </article>
 
