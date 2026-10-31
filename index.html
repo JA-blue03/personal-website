@@ -48,11 +48,15 @@ section{padding:54px 0;border-top:1px solid var(--line)}
 .project h4{margin:18px 0 4px;font-size:1rem}
 .project p,.project ul{margin:0 0 8px}
 .project ul{padding-left:20px}
-figure{margin:20px 0 0;position:relative;border:2px dashed var(--line);border-radius:8px;min-height:140px;
+figure{margin:20px 0 0;border:2px dashed var(--line);border-radius:8px;min-height:140px;
   display:flex;align-items:center;justify-content:center;background:var(--soft);overflow:hidden}
 figure span{padding:14px;color:var(--muted);font-size:.9rem;text-align:center}
-figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--card)}
-figcaption{position:absolute;left:0;right:0;bottom:0}
+figure img{display:block;width:100%;height:auto;background:var(--card);cursor:zoom-in}
+figure.ok{border-style:solid;display:block}
+figure.ok span{display:none}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+.lightbox.on{display:flex}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
 .result{background:var(--soft);border-left:4px solid var(--blue);border-radius:6px;padding:14px 18px;margin:18px 0 0}
 .result b{font-family:Georgia,serif;font-size:1.5rem;display:block;line-height:1.2}
 .result small{color:var(--muted);display:block;margin-top:4px}
@@ -144,15 +148,15 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
          Hide any real names, IDs, site names or customer data first. -->
     <figure>
       <span>Picture goes here.<br>Upload it as images/fault-portal-1.png</span>
-      <img src="images/fault-portal-1.png" alt="Home screen of the fault logging portal" onerror="this.style.display='none'">
+      <img src="images/fault-portal-1.png" alt="Home screen of the fault logging portal" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
     <figure>
       <span>Second picture (optional).<br>Upload it as images/fault-portal-2.png</span>
-      <img src="images/fault-portal-2.png" alt="Fault report form with photo upload" onerror="this.style.display='none'">
+      <img src="images/fault-portal-2.png" alt="Fault report form with photo upload" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
     <figure>
       <span>Workflow diagram (optional).<br>Upload it as images/fault-portal-workflow.png</span>
-      <img src="images/fault-portal-workflow.png" alt="Workflow: submission, processing, SME verification, notification" onerror="this.style.display='none'">
+      <img src="images/fault-portal-workflow.png" alt="Workflow: submission, processing, SME verification, notification" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
 
     <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
@@ -171,7 +175,7 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
     </ul>
     <figure>
       <span>Picture goes here.<br>Upload it as images/pipeline-1.png</span>
-      <img src="images/pipeline-1.png" alt="Google Sheet filled automatically from email alerts (sample data)" onerror="this.style.display='none'">
+      <img src="images/pipeline-1.png" alt="Google Sheet filled automatically from email alerts (sample data)" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
     <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
   </article>
@@ -232,5 +236,17 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
   <div class="wrap">© 2026 Leong Jing An. Project screenshots use sample data only.</div>
 </footer>
 
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Enlarged picture"><img alt=""></div>
+<script>
+(function(){
+  var box=document.getElementById("lightbox"), big=box.querySelector("img");
+  document.querySelectorAll("figure img").forEach(function(img){
+    img.addEventListener("click",function(){big.src=img.src;big.alt=img.alt;box.classList.add("on");});
+  });
+  box.addEventListener("click",function(){box.classList.remove("on");});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")box.classList.remove("on");});
+})();
+</script>
 </body>
 </html>
