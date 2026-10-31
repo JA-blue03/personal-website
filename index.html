@@ -54,6 +54,7 @@ figure span{padding:14px;color:var(--muted);font-size:.9rem;text-align:center}
 figure img{display:block;width:100%;height:auto;background:var(--card);cursor:zoom-in}
 figure.ok{border-style:solid;display:block}
 figure.ok span{display:none}
+.cap{font-size:.88rem;color:var(--muted);margin:6px 0 0}
 .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
 .lightbox.on{display:flex}
 .lightbox img{max-width:100%;max-height:100%;object-fit:contain}
@@ -148,16 +149,19 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
          Hide any real names, IDs, site names or customer data first. -->
     <figure>
       <span>Picture goes here.<br>Upload it as images/fault-portal-1.png</span>
-      <img src="images/fault-portal-1.png" alt="Home screen of the fault logging portal" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
+      <img src="images/fault-portal-1.png" alt="Home screen of the error registration module" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
+    <p class="cap">Error Registration Module: users choose a site file, then log a fault with photos.</p>
     <figure>
-      <span>Second picture (optional).<br>Upload it as images/fault-portal-2.png</span>
-      <img src="images/fault-portal-2.png" alt="Fault report form with photo upload" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
+      <span>Second picture.<br>Upload it as images/fault-portal-2.png</span>
+      <img src="images/fault-portal-2.png" alt="Audit Hub home screen showing ticket counts by status" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
+    <p class="cap">SME Review Console: ticket totals and status counts (Pending, Closed, Rectified) for each site.</p>
     <figure>
-      <span>Workflow diagram (optional).<br>Upload it as images/fault-portal-workflow.png</span>
-      <img src="images/fault-portal-workflow.png" alt="Workflow: submission, processing, SME verification, notification" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
+      <span>Flow picture.<br>Upload it as images/fault-portal-workflow.png</span>
+      <img src="images/fault-portal-workflow.png" alt="Power Automate flow with a Switch that sends each record to its monthly Excel table" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
+    <p class="cap">Power Automate flow: a Switch routes each record to its monthly Excel table, which fixed the slow whole-workbook search.</p>
 
     <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
   </article>
