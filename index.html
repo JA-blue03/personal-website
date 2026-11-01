@@ -167,23 +167,35 @@ footer{padding:30px 0 50px;border-top:1px solid var(--line);color:var(--muted);f
   </article>
 
   <!-- ===== PROJECT 2 ===== -->
+   <!-- ===== PROJECT 2 ===== -->
   <article class="project">
-    <h3>Automated Transaction Data Extraction &amp; Logging Pipeline</h3>
-    <p class="tools">Equinix Singapore internship · Google Apps Script, Gmail, Google Sheets</p>
-    <p>An automation that removes manual data entry from incoming email alerts.</p>
+    <h3>Transaction Data Extraction &amp; Logging Pipeline</h3>
+    <p class="tools">Equinix Singapore internship · Google Apps Script, Gmail, Google Sheets, dashboard</p>
+    <p>An automation that removes manual data entry from incoming email alerts and puts the data in one place.</p>
+ 
     <h4>What I built</h4>
     <ul>
-      <li>Custom Google Apps Script that reads incoming alert emails in Gmail.</li>
-      <li>Logic that extracts the key transaction fields from each email.</li>
+      <li>Custom Google Apps Script that reads incoming alert emails in Gmail and extracts the key transaction fields.</li>
       <li>Structured rows logged into Google Sheets in real time.</li>
+      <li>A centralised dashboard that shows all the data in one place.</li>
+      <li>Extra filters on the website, so every category can be searched.</li>
     </ul>
+ 
+    <h4>Troubleshooting and challenges</h4>
+    <ul>
+      <li><b>Issue:</b> the Threshold sheet could not be captured. <b>Fix:</b> I renamed the sheet to a more relevant name, which solved it.</li>
+      <li><b>Issue:</b> there was no tool to see all the data in one place. <b>Fix:</b> I built a centralised dashboard to present it clearly.</li>
+      <li><b>Challenge:</b> I did not build the original website, so I first had to understand how its backend works. Changing code without that knowledge could cause bugs, so I made a complete backup copy before any update.</li>
+      <li><b>Improvement:</b> the website only had filters for some categories, so I added more filters to cover all of them.</li>
+    </ul>
+ 
     <figure>
       <span>Picture goes here.<br>Upload it as images/pipeline-1.png</span>
-      <img src="images/pipeline-1.png" alt="Google Sheet filled automatically from email alerts (sample data)" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
+      <img src="images/pipeline-1.png" alt="Dashboard and Google Sheet built from email alerts (sample data)" onload="this.parentNode.classList.add('ok')" onerror="this.style.display='none'">
     </figure>
     <!-- <p><a class="btn" href="PASTE-YOUR-YOUTUBE-LINK-HERE">Watch demo video</a></p> -->
   </article>
-
+ 
   <!-- Want a third project later? Copy one whole <article> ... </article> block and paste it here. -->
 </section>
 
